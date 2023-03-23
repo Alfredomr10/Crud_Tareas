@@ -10,7 +10,7 @@
 
 </head>
 
-<body class="">
+<body>
 <?php include("Conexion.php");
 $registros=$base->query("SELECT * FROM tarea")->fetchAll(PDO::FETCH_OBJ);
 
@@ -40,13 +40,13 @@ header("Location:index.php");
      
  
       <td><a href="borrar.php?nombre=<?php echo $tareas->nombre ?>"><input  class="btn btn-success" type='button' name='del' id='del' value='Terminada!!'></a></td>
-      <td ><input class="btn btn-secondary" type='button' name='up' id='up' value='Actualizar'></a></td>
+      <td><a href="actualizar.php?nom=<?php echo $tareas->nombre?>& des=<?php echo $tareas->descripcion?>"><input class="btn-secondary" type='button' name='up' id='up' value='Actualizar'></a></td>
     </tr>   
     <?php endforeach ?>    
 	<tr>
 	
-      <td><input type='text' name='Nom' size='10' class='centrado'></td>
-      <td><input type='text' name=' Des' size='10' class='centrado'></td>
+      <td><input type='text' name='Nom' size='10' ></td>
+      <td><input type='text' name=' Des' size='10'></td>
       <td ><input class="btn btn-primary" type='submit' name='cr' id='cr' value='Nueva tarea'></td></tr> 
          
   </table>
